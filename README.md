@@ -20,7 +20,7 @@ The same example given for the CLI use would have the following `.buildpacks` fi
 
 Set the private key environment variable `SSH_KEY` of your app (note that the key needs to be base64 encoded).
 
-    $ scalingo env-set SSH_KEY=$(cat path/to/your/keys/id_rsa | base64)
+    $ scalingo env-set SSH_KEY="$(cat path/to/your/keys/id_rsa | base64)"
 
 By default the buildpack adds GitHub to `known_hosts`. However you can configure your app to allow custom hosts, too. All that's needed is the set `SSH_HOSTS` for you app to a comma-separated list of hosts, e.g. `git@github.com,example.com`
 
