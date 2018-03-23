@@ -1,6 +1,6 @@
 # ssh-private-key-buildpack
 
-A Buildpack for setting the ssh private key as part of the application build. It's meant to be used as part of a setup [using multiple buildpacks](https://doc.scalingo.com/platform/deployment/buildpacks/multi)
+A Buildpack for setting the ssh private key as part of the application build. It's meant to be used as part of a setup [using multiple buildpacks](https://doc.scalingo.com/platform/deployment/buildpacks/multi).
 
 # Example usage
 
@@ -22,6 +22,6 @@ Set the private key environment variable `SSH_KEY` of your app (note that the ke
 
     $ scalingo env-set SSH_KEY=$(cat path/to/your/keys/id_rsa | base64)
 
-By default the buildback adds Github to `known_hosts`. However you can configure your app to allow custom hosts, too. All that's needed is the set `SSH_HOSTS` for you app to a comma-separated list of hosts, e.g. `git@github.com,example.com`
+By default the buildpack adds GitHub to `known_hosts`. However you can configure your app to allow custom hosts, too. All that's needed is the set `SSH_HOSTS` for you app to a comma-separated list of hosts, e.g. `git@github.com,example.com`
 
     $ scalingo env-set SSH_HOSTS="git@github.com,example.com"
