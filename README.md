@@ -25,3 +25,7 @@ Set the private key environment variable `SSH_KEY` of your app (note that the ke
 By default the buildpack adds GitHub to `known_hosts`. However you can configure your app to allow custom hosts, too. All that's needed is the set `SSH_HOSTS` for you app to a comma-separated list of hosts, e.g. `git@github.com,example.com`
 
     $ scalingo env-set SSH_HOSTS="git@github.com,example.com"
+
+## SSH Key Management Strategy
+
+Because the buildpack cannot provide a password, the provided SSH key cannot be encrypted. Thus our advice to fetch private GitHub repository is to setup a GitHub Deploy Key, unencrypted and read-only only for the target repositories you want to fetch.
